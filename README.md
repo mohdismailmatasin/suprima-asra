@@ -163,7 +163,7 @@ export VCS="git"    # Default
 
 ## 🎯 Prompt Structure
 
-```
+```bash
 ┌─────────────────────────────────────────────────────────────
 └ [SSH:] [user@hostname] /current/directory on › branch-name
  › 
@@ -201,13 +201,22 @@ export VCS="git"    # Default
 - **Enhancements**: Suprima-Asra modifications
 - **Inspiration**: Various zsh themes from the community
 
-## 📄 License
+## 📄 Tribute
 
 This theme inherits the license from the original Ultima theme. Please refer to the original repository for licensing information.
 
 ## 🤝 Contributing
 
 Feel free to submit issues, feature requests, or pull requests to improve this theme!
+
+## 📄 License
+
+[MIT](LICENSE)
+
+## 📄 Example
+
+![alt text](sample/suprima_v1.png)
+![alt text](sample/suprima_v2.png)
 
 ---
 
