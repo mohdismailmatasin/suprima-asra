@@ -75,8 +75,8 @@ A beautiful and feature-rich zsh theme based on the [Ultima theme](https://githu
 1. **Clone or download** the theme files:
 
    ```bash
-   git clone <repository-url>
-   cd "zsh theme"
+   git clone https://github.com/mohdismailmatasin/zsh-theme.git
+   cd zsh-theme
    ```
 
 2. **Copy theme file** to your zsh themes directory:
