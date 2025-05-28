@@ -166,7 +166,7 @@ export VCS="git"    # Default
 ```bash
 ┌─────────────────────────────────────────────────────────────
 └ [SSH:] [user@hostname] /current/directory on › branch-name
- › 
+ ›
 ```
 
 **Right side:** `[✗ exit-code |] [public-ip |] time | battery`
@@ -201,22 +201,23 @@ export VCS="git"    # Default
 - **Enhancements**: Suprima-Asra modifications
 - **Inspiration**: Various zsh themes from the community
 
-## 📄 Tribute
+## 📸 Screenshots
 
-This theme inherits the license from the original Ultima theme. Please refer to the original repository for licensing information.
+![Suprima-Asra v1](sample/suprima_v1.png)
+*Version 1: Basic prompt with directory and git status*
+
+![Suprima-Asra v2](sample/suprima_v2.png)
+*Version 2: Enhanced prompt with username@hostname display*
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+The original Ultima theme by Egor Lem also uses a permissive license.
 
 ## 🤝 Contributing
 
 Feel free to submit issues, feature requests, or pull requests to improve this theme!
-
-## 📄 License
-
-[MIT](LICENSE)
-
-## 📄 Example
-
-![alt text](sample/suprima_v1.png)
-![alt text](sample/suprima_v2.png)
 
 ---
 
