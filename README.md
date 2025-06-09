@@ -72,26 +72,6 @@ ZSH_THEME="suprima-asra"
 source ~/.zshrc
 ```
 
-### Manual Installation
-
-1. Download the theme file:
-
-```bash
-wget https://raw.githubusercontent.com/mohdismailmatasin/suprima-asra/main/suprima-asra.zsh-theme
-```
-
-2. Source it in your `~/.zshrc`:
-
-```bash
-source /path/to/suprima-asra.zsh-theme
-```
-
-3. Reload your shell:
-
-```bash
-source ~/.zshrc
-```
-
 ## 📋 Requirements
 
 - **Zsh** 5.0 or later
