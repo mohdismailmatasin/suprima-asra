@@ -1,224 +1,217 @@
 # Suprima-Asra Zsh Theme
 
-A beautiful and feature-rich zsh theme based on the [Ultima theme](https://github.com/egorlem/ultima.zsh-theme) by Egor Lem, enhanced with additional functionality and customizations.
+A feature-rich, minimalistic zsh theme based on the [Ultima theme](https://github.com/egorlem/ultima.zsh-theme) by Egor Lem, enhanced with additional functionality for modern development workflows.
 
 ## ✨ Features
 
-### 🎨 Visual Elements
+### 🎨 Visual Design
 
-- **Clean minimalistic design** with Unicode box-drawing characters
-- **Color-coded prompt** with intuitive visual hierarchy
-- **Horizontal separator line** that spans the full terminal width
+- **Clean minimalistic interface** with Unicode box-drawing characters
+- **Full-width separator line** that spans the entire terminal width
 - **Custom arrow symbols** (›) for consistent visual flow
+- **Color-coded elements** for better readability and visual hierarchy
 
-### 🔧 Git Integration
+### 🔧 Version Control Support
 
-- **Real-time git status** with branch name display
-- **File status indicators**:
-  - `M` - Modified files (cyan)
+- **Multi-VCS support**: Git, SVN, and Mercurial
+- **Real-time git status** with comprehensive file state indicators:
   - `A` - Added/staged files (green)
+  - `M` - Modified files (cyan)
   - `U` - Untracked files (blue)
-- **Support for git actions** (merge, rebase, etc.)
-- **Git hash display** (short 6-character format)
-- **Multi-VCS support** (Git, SVN, Mercurial)
+- **Branch name display** with color coding
+- **Git hash display** (6 characters) during actions
+- **Action status** (rebase, merge, etc.)
 
-### 🌐 System Information
+### 🖥️ System Information
 
 - **SSH connection indicator** - Shows "SSH:" when connected remotely
-- **Battery status** with visual indicators:
+- **Battery status** (Linux) with color-coded icons:
   - 🔋 Green (>80%), Yellow (30-80%), Red (<30%)
   - ⚡ Charging indicator
-- **Public IP address** display (when online)
-- **Current time** in the right prompt
-- **Exit status** of last command with error indicator (✗)
+- **Command execution timing** - Shows duration for commands taking >5 seconds
+- **Exit status display** - Red ✗ with error code for failed commands
+- **Current time** display
+- **Username in directory info**
 
-### 💻 Enhanced Terminal Experience
+### 🚀 Development Environment Detection
 
-- **Smart tab completion** with menu selection
-- **Case-insensitive completion**
-- **Colored file listings** (LS_COLORS)
-- **Enhanced man page** viewing with colors
-- **Caching for faster completions**
+- **Python virtual environment** - Shows active venv name
+- **Node.js version** - Displays Node version when in JS/TS projects
+- **Docker detection** - 🐳 icon when Dockerfile or docker-compose files present
+- **Project context awareness** - Detects package.json, .nvmrc, node_modules
 
-## 📦 Versions
+### 🎯 Enhanced Shell Experience
 
-### Version 1 (`suprima-asra_v1.zsh-theme`)
+- **Intelligent tab completion** with caching and color coding
+- **Custom LS_COLORS** for file type differentiation
+- **Optimized LESS/MAN page viewing** with color support
+- **Case-insensitive completion matching**
+- **Menu-based completion selection**
 
-- Basic prompt with current directory
-- All core features included
+## 🛠️ Installation
 
-### Version 2 (`suprima-asra_v2.zsh-theme`)
+### Oh My Zsh
 
-- **Enhanced prompt** with username@hostname display
-- Color-coded user info: username (green), @ (white), hostname (blue)
-- All features from v1 plus user identification
+1. Download the theme to your Oh My Zsh themes directory:
 
-## 🔧 Prerequisites
+```bash
+curl -o ~/.oh-my-zsh/themes/suprima-asra.zsh-theme https://raw.githubusercontent.com/your-username/suprima-asra/main/suprima-asra.zsh-theme
+```
 
-- **Zsh shell** (version 5.0 or higher)
+2. Set the theme in your `~/.zshrc`:
+
+```bash
+ZSH_THEME="suprima-asra"
+```
+
+3. Reload your shell:
+
+```bash
+source ~/.zshrc
+```
+
+### Manual Installation
+
+1. Download the theme file:
+
+```bash
+wget https://raw.githubusercontent.com/your-username/suprima-asra/main/suprima-asra.zsh-theme
+```
+
+2. Source it in your `~/.zshrc`:
+
+```bash
+source /path/to/suprima-asra.zsh-theme
+```
+
+3. Reload your shell:
+
+```bash
+source ~/.zshrc
+```
+
+## 📋 Requirements
+
+- **Zsh** 5.0 or later
 - **Git** (for version control features)
-- **curl** (for public IP functionality)
-- **Unicode-capable terminal** (for proper symbol display)
+- **A terminal** that supports Unicode and 256 colors
+- **Font** with Unicode support for proper character rendering
 
-### Recommended Terminal Emulators
+### Optional Dependencies
 
-- iTerm2 (macOS)
-- Alacritty
-- Kitty
-- GNOME Terminal
-- Windows Terminal
+- **Node.js** - For Node version display
+- **Python** - For virtual environment detection
+- **Docker** - For Docker project detection
+- **Battery support** - Linux systems with `/sys/class/power_supply/BAT0`
 
-## 📥 Installation
+## 🎛️ Configuration
 
-### Method 1: Manual Installation
+The theme includes several configurable elements:
 
-1. **Clone or download** the theme files:
+### VCS Support
 
-   ```bash
-   git clone https://github.com/mohdismailmatasin/zsh-theme.git
-   cd zsh-theme
-   ```
+By default, the theme is configured for Git. To change or disable VCS:
 
-2. **Copy theme file** to your zsh themes directory:
-
-   ```bash
-   # For Oh My Zsh users
-   cp suprima-asra_v2.zsh-theme ~/.oh-my-zsh/themes/
-
-   # For manual zsh setup
-   mkdir -p ~/.zsh/themes
-   cp suprima-asra_v2.zsh-theme ~/.zsh/themes/
-   ```
-
-3. **Apply the theme**:
-
-   **For Oh My Zsh users:**
-
-   ```bash
-   # Edit ~/.zshrc
-   ZSH_THEME="suprima-asra_v2"
-   ```
-
-   **For manual setup:**
-
-   ```bash
-   # Add to ~/.zshrc
-   source ~/.zsh/themes/suprima-asra_v2.zsh-theme
-   ```
-
-4. **Reload your shell**:
-
-   ```bash
-   source ~/.zshrc
-   # or restart your terminal
-   ```
-
-### Method 2: Direct Integration
-
-1. **Append theme content** directly to your `~/.zshrc`:
-
-   ```bash
-   cat suprima-asra_v2.zsh-theme >> ~/.zshrc
-   source ~/.zshrc
-   ```
-
-### Method 3: Symlink (Recommended for Development)
-
-1. **Create a symlink** for easy updates:
-
-   ```bash
-   ln -sf "$(pwd)/suprima-asra_v2.zsh-theme" ~/.oh-my-zsh/themes/
-   ```
-
-## ⚙️ Configuration
+```bash
+export VCS="git"    # Options: "git", "svn", "hg", or "" to disable
+```
 
 ### Customizing Colors
 
-Edit the theme file to modify colors:
+The theme uses zsh color codes. Key color variables:
+
+- Branch names: Green (`%F{green}`)
+- Modified files: Cyan (`%F{cyan}`)
+- Untracked files: Blue (`%F{blue}`)
+- Error status: Red (`%F{red}`)
+- Time display: Yellow (`%F{yellow}`)
+
+### Timing Threshold
+
+To change the command execution time threshold:
 
 ```bash
-# Example: Change branch name color from green to blue
-vc_branch_name="%F{blue}%b%f"  # Change green to blue
+# Edit the cmd_exec_time function in the theme file
+if (( elapsed > 5 )); then  # Change 5 to your preferred seconds
 ```
 
-### Disabling Features
+## 📱 Prompt Layout
 
-```bash
-# Disable public IP display
-get_public_ip() { echo ""; }
+### Left Prompt (PS1)
 
-# Disable battery status
-battery_status() { echo ""; }
+```
+┌────────────────────────────────────────────────────────────
+└ SSH: ~/current/path (username) on › branch-name
+ › 
 ```
 
-### VCS Configuration
+### Right Prompt (RPROMPT)
 
-The theme supports multiple version control systems:
-
-```bash
-export VCS="git"    # Default
-# export VCS="svn"  # For Subversion
-# export VCS="hg"   # For Mercurial
+```
+⏱ 7s | 🐳 | ⬢ 18.0.0 | venv-name | ✗ 1 | 14:30:25 | 🔋 85%
 ```
 
-## 🎯 Prompt Structure
+### Secondary Prompts
 
-```bash
-┌─────────────────────────────────────────────────────────────
-└ [SSH:] [user@hostname] /current/directory on › branch-name
- ›
-```
+- **PS2**: Continuation prompt for multi-line commands
+- **PS3**: Selection prompt for `select` statements
 
-**Right side:** `[✗ exit-code |] [public-ip |] time | battery`
+## 🎨 Color Scheme
 
-## 🔍 Troubleshooting
+The theme uses a carefully selected color palette:
 
-### Unicode Characters Not Displaying
+- **Directories**: Cyan
+- **Git branches**: Green
+- **Modified files**: Cyan
+- **Untracked files**: Blue
+- **Staged files**: Green
+- **Error indicators**: Red
+- **Time/Battery**: Yellow
+- **Username**: Gray
+- **SSH indicator**: Green
 
-- Ensure your terminal supports Unicode
-- Install a powerline-compatible font
-- Check terminal encoding (should be UTF-8)
+## 🔧 Advanced Features
 
-### Git Status Not Showing
+### Completion System
 
-- Verify you're in a git repository
-- Check git installation: `git --version`
-- Ensure git is in your PATH
+- **Cached completions** for faster performance
+- **Color-coded completion menus**
+- **Case-insensitive matching**
+- **SSH host completion** from known_hosts
+- **File type awareness** with ignored patterns
 
-### Battery Status Not Working
+### Terminal Enhancements
 
-- Linux only feature (uses `/sys/class/power_supply/BAT0`)
-- For other systems, the battery function will silently fail
-
-### Slow Prompt
-
-- Disable public IP lookup for faster prompt
-- Check network connectivity if IP lookup hangs
-
-## 🙏 Credits
-
-- **Original Ultima Theme**: [Egor Lem](https://github.com/egorlem/ultima.zsh-theme)
-- **Enhancements**: Suprima-Asra modifications
-- **Inspiration**: Various zsh themes from the community
-
-## 📸 Screenshots
-
-![Suprima-Asra v1](sample/suprima_v1.png)
-*Version 1: Basic prompt with directory and git status*
-
-![Suprima-Asra v2](sample/suprima_v2.png)
-*Version 2: Enhanced prompt with username@hostname display*
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-The original Ultima theme by Egor Lem also uses a permissive license.
+- **Enhanced LESS pager** with syntax highlighting
+- **Improved MAN pages** with color support
+- **Smart file listing** with LS_COLORS
+- **History optimization**
 
 ## 🤝 Contributing
 
-Feel free to submit issues, feature requests, or pull requests to improve this theme!
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
+
+## 📜 License
+
+This project is licensed under the same terms as the original Ultima theme.
+
+## 🙏 Acknowledgments
+
+- **Egor Lem** - Original [Ultima theme](https://github.com/egorlem/ultima.zsh-theme) creator
+- **Zsh community** - For the excellent shell and plugin ecosystem
+
+## 📞 Support
+
+If you encounter any issues or have questions:
+
+1. Check the [Issues](https://github.com/your-username/suprima-asra/issues) page
+2. Create a new issue with detailed information
+3. Include your system information and zsh version
 
 ---
 
-**Enjoy your enhanced terminal experience! 🚀**
+Made with ❤️ for developers who appreciate both functionality and aesthetics

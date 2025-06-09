@@ -20,6 +20,9 @@ autoload -Uz compinit; compinit
 
 ANSI_reset="\x1b[0m"
 ANSI_dim_black="\x1b[0;30m"
+ANSI_grey="\x1b[0;37m"
+ANSI_dim_grey="\x1b[2;37m"
+ANSI_very_dim_grey="\x1b[2;30m"
 
 # LOCAL/VARIABLES/GRAPHIC ------------------------------------------------------
 
@@ -95,6 +98,21 @@ fi
 
 setopt PROMPT_SUBST
 
+# Command execution time tracking
+cmd_exec_time() {
+  local stop=$(date +%s)
+  local start=${cmd_timestamp:-$stop}
+  local elapsed=$((stop - start))
+  
+  if (( elapsed > 5 )); then
+    echo "%F{yellow}⏱ ${elapsed}s%f | "
+  fi
+}
+
+preexec() {
+  cmd_timestamp=$(date +%s)
+}
+
 # Battery status function for Linux (using /sys/class/power_supply)
 battery_status() {
   local percent bat_status icon color
@@ -118,13 +136,10 @@ battery_status() {
   fi
 }
 
-# Function to get public IP address (if online)
+# Function to get public IP address (if online) - DISABLED
 get_public_ip() {
-  local ip
-  ip=$(curl -s --max-time 2 https://api.ipify.org)
-  if [[ -n $ip ]]; then
-    echo "$ip | "
-  fi
+  # IP address display removed for privacy
+  echo ""
 }
 
 # Prepare git status line
@@ -143,18 +158,53 @@ printPsOneLimiter() {
     spacing="${spacing}${char_vertical_divider}"
   done
   
-  echo $ANSI_dim_black$char_down_and_right_divider$spacing$ANSI_reset
+  echo $ANSI_very_dim_grey$char_down_and_right_divider$spacing$ANSI_reset
+}
+
+# SEGMENT/PYTHON_ENV -----------------------------------------------------------
+
+python_env_status() {
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    local env_name=$(basename "$VIRTUAL_ENV")
+    echo "%F{white} $env_name%f | "
+  fi
+}
+
+# SEGMENT/NODE_ENV -------------------------------------------------------------
+
+node_env_status() {
+  if [[ -f "package.json" || -f ".nvmrc" || -f "node_modules" ]]; then
+    local node_version=$(node --version 2>/dev/null)
+    if [[ -n "$node_version" ]]; then
+      echo "%F{green}⬢ ${node_version#v}%f | "
+    fi
+  fi
+}
+
+# SEGMENT/DIRECTORY_INFO -------------------------------------------------------
+
+dir_info() {
+  local username=$(whoami)
+  echo "%F{242}($username)%f "
+}
+
+# SEGMENT/DOCKER_STATUS --------------------------------------------------------
+
+docker_status() {
+  if [[ -f "Dockerfile" || -f "docker-compose.yml" || -f "docker-compose.yaml" ]]; then
+    echo "%F{blue}🐳%f | "
+  fi
 }
 
 # ENV/VARIABLES/PROMPT_LINES ---------------------------------------------------
 
 # PS1 arrow - green # PS2 arrow - cyan # PS3 arrow - white
 
-PROMPT="%F{black}${char_up_and_right_divider} ${ssh_marker} %f%F{cyan}%~%f$(prepareGitStatusLine)
+PROMPT="%F{235}${char_up_and_right_divider} ${ssh_marker} %f%F{cyan}%~%f$(dir_info)$(prepareGitStatusLine)
 %F{green} ${char_arrow}%f "
 
-# Show exit status, public IP, time, and battery in RPROMPT
-RPROMPT='$(if [[ $LAST_EXIT_STATUS -ne 0 ]]; then echo "%F{red}✗ $LAST_EXIT_STATUS%f | "; fi)$(get_public_ip)%F{yellow}%*%f | $(battery_status)'
+# Show exit status, time, battery, python env, node env, docker status, and command execution time in RPROMPT
+RPROMPT='$(cmd_exec_time)$(docker_status)$(node_env_status)$(python_env_status)$(if [[ $LAST_EXIT_STATUS -ne 0 ]]; then echo "%F{red}✗ $LAST_EXIT_STATUS%f | "; fi)%F{yellow}%*%f | $(battery_status)'
 
 # PS2 Example 
 # wc << EOF 
