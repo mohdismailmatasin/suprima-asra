@@ -57,7 +57,7 @@ A feature-rich, minimalistic zsh theme based on the [Ultima theme](https://githu
 1. Download the theme to your Oh My Zsh themes directory:
 
 ```bash
-curl -o ~/.oh-my-zsh/themes/suprima-asra.zsh-theme https://raw.githubusercontent.com/your-username/suprima-asra/main/suprima-asra.zsh-theme
+curl -o ~/.oh-my-zsh/themes/suprima-asra.zsh-theme https://raw.githubusercontent.com/mohdismailmatasin/suprima-asra/main/suprima-asra.zsh-theme
 ```
 
 2. Set the theme in your `~/.zshrc`:
