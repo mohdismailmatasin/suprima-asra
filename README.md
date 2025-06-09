@@ -6,6 +6,8 @@ A feature-rich, minimalistic zsh theme based on the [Ultima theme](https://githu
 
 ### 🎨 Visual Design
 
+![alt text](sample/sample.png)
+
 - **Clean minimalistic interface** with Unicode box-drawing characters
 - **Full-width separator line** that spans the entire terminal width
 - **Custom arrow symbols** (›) for consistent visual flow
@@ -139,7 +141,7 @@ if (( elapsed > 5 )); then  # Change 5 to your preferred seconds
 
 ### Left Prompt (PS1)
 
-```
+```bash
 ┌────────────────────────────────────────────────────────────
 └ SSH: ~/current/path (username) on › branch-name
  › 
@@ -147,7 +149,7 @@ if (( elapsed > 5 )); then  # Change 5 to your preferred seconds
 
 ### Right Prompt (RPROMPT)
 
-```
+```bash
 ⏱ 7s | 🐳 | ⬢ 18.0.0 | venv-name | ✗ 1 | 14:30:25 | 🔋 85%
 ```
 
