@@ -190,7 +190,7 @@ This project is licensed under the same terms as the original Ultima theme.
 
 If you encounter any issues or have questions:
 
-1. Check the [Issues](https://github.com/your-username/suprima-asra/issues) page
+1. Check the [Issues](https://github.com/mohdismailmatasin/suprima-asra/issues) page
 2. Create a new issue with detailed information
 3. Include your system information and zsh version
 
