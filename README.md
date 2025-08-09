@@ -1,137 +1,127 @@
-# Suprima-Asra Zsh Theme
+# Suprima ASRA Zsh Theme
 
-A feature-rich, minimalistic zsh theme based on the [Ultima theme](https://github.com/egorlem/ultima.zsh-theme) by Egor Lem, enhanced with additional functionality for modern development workflows.
+An enhanced, performance-optimized Zsh theme for dark backgrounds, based on the [Ultima Zsh Theme](https://github.com/egorlem/ultima.zsh-theme) by Egor Lem. Suprima ASRA adds modern features, better error/status handling, and improved visuals for developers who want both aesthetics and functionality.
 
 ## ✨ Features
 
 ### 🎨 Visual Design
 
-![alt text](sample/sample.png)
+![Theme Screenshot](sample/sample.png)
 
-- **Clean minimalistic interface** with Unicode box-drawing characters
-- **Full-width separator line** that spans the entire terminal width
-- **Custom arrow symbols** (›) for consistent visual flow
-- **Color-coded elements** for better readability and visual hierarchy
+- Minimal, clean interface with Unicode box-drawing and arrow characters
+- Optimized for dark backgrounds and modern terminals
+- Color-coded segments for status, VCS, and system info
+- Full-width separator line for prompt clarity
 
-### 🔧 Version Control Support
+### 🔧 Version Control & Project Awareness
 
-- **Multi-VCS support**: Git, SVN, and Mercurial
-- **Real-time git status** with comprehensive file state indicators:
-  - `A` - Added/staged files (green)
-  - `M` - Modified files (cyan)
-  - `U` - Untracked files (blue)
-- **Branch name display** with color coding
-- **Git hash display** (6 characters) during actions
-- **Action status** (rebase, merge, etc.)
+- **Multi-VCS support:** Git, SVN, Mercurial (configurable)
+- **Git enhancements:**
+  - Real-time status: staged (A, green), modified (M, cyan), untracked (U, blue)
+  - Branch name and short hash display
+  - Action status (rebase, merge, etc.)
+  - Ahead/behind remote tracking
+  - Git stash count and untracked file indicator
+- **Project context detection:**
+  - Python venv/conda environment name
+  - Node.js version (if project detected)
+  - Rust and Go version (if project detected)
+  - Docker context (🐳 icon, running containers)
 
-### 🖥️ System Information
+### 🖥️ System & Shell Information
 
-- **SSH connection indicator** - Shows "SSH:" when connected remotely
-- **Battery status** (Linux) with color-coded icons:
-  - 🔋 Green (>80%), Yellow (30-80%), Red (<30%)
+- SSH connection indicator (green "SSH:")
+- Battery status (Linux/macOS/WSL):
+  - 🔋 Green (>80%), Yellow (50-80%), Orange (20-50%), Red (<20%)
   - ⚡ Charging indicator
-- **Command execution timing** - Shows duration for commands taking >5 seconds
-- **Exit status display** - Red ✗ with error code for failed commands
-- **Current time** display
-- **Username in directory info**
-
-### 🚀 Development Environment Detection
-
-- **Python virtual environment** - Shows active venv name
-- **Node.js version** - Displays Node version when in JS/TS projects
-- **Docker detection** - 🐳 icon when Dockerfile or docker-compose files present
-- **Project context awareness** - Detects package.json, .nvmrc, node_modules
+- System load and memory usage indicators
+- Command execution timing (color-coded by duration)
+- Exit status with icon and code for failed commands
+- Current time (24h, yellow)
+- Username and working directory info
 
 ### 🎯 Enhanced Shell Experience
 
-- **Intelligent tab completion** with caching and color coding
-- **Custom LS_COLORS** for file type differentiation
-- **Optimized LESS/MAN page viewing** with color support
-- **Case-insensitive completion matching**
-- **Menu-based completion selection**
+- Intelligent, color-coded tab completion with caching
+- Custom `LS_COLORS` and `LSCOLORS` for file type highlighting
+- Enhanced LESS/MAN page viewing with color support
+- Case-insensitive, menu-based completion
+- Performance optimizations for large projects
 
 ## 🛠️ Installation
 
 ### Oh My Zsh
 
-1. Download the theme to your Oh My Zsh themes directory:
+1. Download the theme:
 
-```bash
-curl -o ~/.oh-my-zsh/themes/suprima-asra.zsh-theme https://raw.githubusercontent.com/mohdismailmatasin/suprima-asra/main/suprima-asra.zsh-theme
-```
+   ```zsh
+   curl -o ~/.oh-my-zsh/themes/suprima-asra.zsh-theme \
+     https://raw.githubusercontent.com/mohdismailmatasin/suprima-asra/main/suprima-asra.zsh-theme
+   ```
 
-2. Set the theme in your `~/.zshrc`:
+2. Set in your `~/.zshrc`:
 
-```bash
-ZSH_THEME="suprima-asra"
-```
+   ```zsh
+   ZSH_THEME="suprima-asra"
+   ```
 
 3. Reload your shell:
 
-```bash
-source ~/.zshrc
-```
+   ```zsh
+   source ~/.zshrc
+   ```
 
 ## 📋 Requirements
 
-- **Zsh** 5.0 or later
-- **Git** (for version control features)
-- **A terminal** that supports Unicode and 256 colors
-- **Font** with Unicode support for proper character rendering
+- **Zsh** 5.0+
+- **Git** (for VCS features)
+- **Terminal** with Unicode & 256 color support
+- **Font** with Unicode glyphs
 
-### Optional Dependencies
+### Optional (for extra features)
 
-- **Node.js** - For Node version display
-- **Python** - For virtual environment detection
-- **Docker** - For Docker project detection
-- **Battery support** - Linux systems with `/sys/class/power_supply/BAT0`
+- **Node.js** (for Node version display)
+- **Python** (for venv/conda detection)
+- **Rust** (for Rust version display)
+- **Go** (for Go version display)
+- **Docker** (for Docker context)
+- **Battery info** (Linux: `/sys/class/power_supply/BAT0`, macOS: `pmset`, WSL: `powershell.exe`)
 
-## 🎛️ Configuration
-
-The theme includes several configurable elements:
+## 🎛️ Configuration & Customization
 
 ### VCS Support
 
-By default, the theme is configured for Git. To change or disable VCS:
+By default, Git is enabled. To change or disable VCS:
 
-```bash
+```zsh
 export VCS="git"    # Options: "git", "svn", "hg", or "" to disable
 ```
 
 ### Customizing Colors
 
-The theme uses zsh color codes. Key color variables:
-
-- Branch names: Green (`%F{green}`)
-- Modified files: Cyan (`%F{cyan}`)
-- Untracked files: Blue (`%F{blue}`)
-- Error status: Red (`%F{red}`)
-- Time display: Yellow (`%F{yellow}`)
+Colors are set for optimal contrast on dark backgrounds. You can edit color codes in the theme file (see comments for each segment).
 
 ### Timing Threshold
 
-To change the command execution time threshold:
-
-```bash
-# Edit the cmd_exec_time function in the theme file
-if (( elapsed > 5 )); then  # Change 5 to your preferred seconds
-```
+To change the command execution time color thresholds, edit the `cmd_exec_time` function in the theme file.
 
 ## 📱 Prompt Layout
 
 ### Left Prompt (PS1)
 
-```bash
+```zsh
 ┌────────────────────────────────────────────────────────────
-└ SSH: ~/current/path (username) on › branch-name
- › 
+└ SSH: (username) on ~/current/path › branch-name
+  ›
 ```
 
 ### Right Prompt (RPROMPT)
 
-```bash
-⏱ 7s | 🐳 | ⬢ 18.0.0 | venv-name | ✗ 1 | 14:30:25 | 🔋 85%
+```zsh
+⏱ 7s | 📊 1.2 | 🧠 65% | ⎈ context | 🐳[2] | 🦀 1.70 | 🐹 1.21 | ⬢ 18.0.0 | 🐍 venv | ✗ 1 | 14:30:25 | 🔋 85%
 ```
+
+*Segments only appear if relevant (e.g., Docker, Rust, Go, Node, Python, Kubernetes, etc.)*
 
 ### Secondary Prompts
 
@@ -140,34 +130,32 @@ if (( elapsed > 5 )); then  # Change 5 to your preferred seconds
 
 ## 🎨 Color Scheme
 
-The theme uses a carefully selected color palette:
-
-- **Directories**: Cyan
-- **Git branches**: Green
-- **Modified files**: Cyan
-- **Untracked files**: Blue
-- **Staged files**: Green
-- **Error indicators**: Red
-- **Time/Battery**: Yellow
-- **Username**: Gray
-- **SSH indicator**: Green
+- **Directories:** Cyan
+- **Git branches:** Green
+- **Modified files:** Cyan
+- **Untracked files:** Blue
+- **Staged files:** Green
+- **Error indicators:** Red
+- **Time/Battery:** Yellow
+- **Username:** Gray
+- **SSH indicator:** Green
 
 ## 🔧 Advanced Features
 
 ### Completion System
 
-- **Cached completions** for faster performance
-- **Color-coded completion menus**
-- **Case-insensitive matching**
-- **SSH host completion** from known_hosts
-- **File type awareness** with ignored patterns
+- Cached completions for faster performance
+- Color-coded completion menus
+- Case-insensitive matching
+- SSH host completion from known_hosts
+- File type awareness with ignored patterns
 
 ### Terminal Enhancements
 
-- **Enhanced LESS pager** with syntax highlighting
-- **Improved MAN pages** with color support
-- **Smart file listing** with LS_COLORS
-- **History optimization**
+- Enhanced LESS pager with syntax highlighting
+- Improved MAN pages with color support
+- Smart file listing with LS_COLORS
+- History optimization
 
 ## 🤝 Contributing
 
@@ -191,8 +179,7 @@ This project is licensed under the same terms as the original Ultima theme.
 If you encounter any issues or have questions:
 
 1. Check the [Issues](https://github.com/mohdismailmatasin/suprima-asra/issues) page
-2. Create a new issue with detailed information
-3. Include your system information and zsh version
+2. Create a new issue with details (system info, zsh version, screenshot if possible)
 
 ---
 
