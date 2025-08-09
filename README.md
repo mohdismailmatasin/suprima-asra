@@ -6,7 +6,8 @@ An enhanced, performance-optimized Zsh theme for dark backgrounds, based on the 
 
 ### 🎨 Visual Design
 
-![Theme Screenshot](sample/sample.png)
+![Theme Screenshot]<img width="856" height="524" alt="sample" src="https://github.com/user-attachments/assets/f36016f9-a062-4732-8aa9-0a1edd280a45" />
+
 
 - Minimal, clean interface with Unicode box-drawing and arrow characters
 - Optimized for dark backgrounds and modern terminals
