@@ -1,5 +1,5 @@
 # Suprima ASRA Zsh Theme - Enhanced Version (Dark Background Optimized)
-# Based on Ultima Zsh Theme p2.c7 - https://github.com/egorlem/ultima.zsh-theme
+# If the devil wears Prada, then who wears Raf? — The devil (again). E.L. 
 #
 # Enhanced with performance optimizations, additional features, and better error handling
 # Optimized for dark terminal backgrounds
