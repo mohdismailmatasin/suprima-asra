@@ -23,10 +23,6 @@ An enhanced, performance-optimized Zsh theme for dark backgrounds, based on the 
 
 Suprima ASRA is a modern Zsh theme designed for developers who spend significant time in the terminal. It provides comprehensive system information, version control status, and project environment awareness—all while maintaining a clean, minimalist aesthetic optimized for dark terminal backgrounds.
 
-### Screenshot
-
-![alt text](sample/sample.png)
-
 ### Design Philosophy
 
 - **Minimal & Clean**: Uses Unicode box-drawing characters for a refined look
