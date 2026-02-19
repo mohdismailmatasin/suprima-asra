@@ -304,7 +304,7 @@ go_env_status() {
 
 dir_info() {
   local username=$(whoami)
-  echo "%F{248}($username)%f"  # Changed from 242 to 248 for better visibility on dark backgrounds
+  echo "%B%F{green}$username%f%b"
 }
 
 # SEGMENT/DOCKER_STATUS - ENHANCED ---------------------------------------------
@@ -354,8 +354,8 @@ command_status() {
 # PS1 arrow - green # PS2 arrow - cyan # PS3 arrow - white
 
 # FIXED: Changed the order to put dir_info() before %~ and added proper spacing
-PROMPT="%F{248}${char_up_and_right_divider} ${ssh_marker}$(dir_info) on %f%F{cyan}%~%f$(prepareGitStatusLine)
-%F{green} ${char_arrow}%f "
+PROMPT="%F{248}${char_up_and_right_divider} ${ssh_marker}$(dir_info) @ %B%F{cyan}%m%f%b on %f%F{cyan}%~%f$(prepareGitStatusLine)
+%B%F{magenta} ${char_arrow}%f%b "
 
 # Enhanced RPROMPT with more information
 RPROMPT='$(cmd_exec_time)$(system_load)$(memory_usage)$(k8s_context)$(docker_status)$(rust_env_status)$(go_env_status)$(node_env_status)$(python_env_status)$(command_status)%F{yellow}%*%f | $(battery_status)'
