@@ -25,7 +25,7 @@ Suprima ASRA is a modern Zsh theme designed for developers who spend significant
 
 ### Screenshot
 
-<img width="856" height="524" alt="sample" src="https://github.com/user-attachments/assets/f36016f9-a062-4732-8aa9-0a1edd280a45" />
+![alt text](sample/sample.png)
 
 ### Design Philosophy
 
