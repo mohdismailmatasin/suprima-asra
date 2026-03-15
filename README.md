@@ -2,8 +2,6 @@
 
 An enhanced Zsh theme optimized for dark terminal backgrounds with performance improvements, additional features, and better error handling.
 
-![Suprima ASRA Theme Preview](https://via.placeholder.com/800x400/0d1117/ffffff?text=Suprima+ASRA+Zsh+Theme+Preview)
-
 ## ✨ Features
 
 - **Dark Background Optimized**: Specifically designed for dark terminals with enhanced color contrast
